@@ -1,30 +1,21 @@
 @import "tailwindcss";
 
-/* ═══════════════════════════════════════════════════════════════════════════════
-   SEMANTIC COLOR TOKENS — every component references these, never raw colors.
-   Light palette: warm off-white surface, champagne-gold accent.
-   Dark palette: deep neutral surface, muted-gold accent.
-   All foreground/background pairs are tested for WCAG AA (4.5:1+).
-   ═══════════════════════════════════════════════════════════════════════════════ */
+/* Semantic tokens keep the restrained indigo palette consistent across themes. */
 
 :root {
-  /* Surfaces */
-  --background: #FAF9F6;
+  --background: #F8FAFC;
   --surface: #FFFFFF;
-  --surface-alt: #F5F3EF;
+  --surface-alt: #F1F5F9;
 
-  /* Text */
-  --foreground: #1A1A1A;
-  --foreground-secondary: #4B5563; /* #4B5563 on #FAF9F6 = 7.5:1 — passes AA */
-  --foreground-muted: #6B7280;     /* used only where contrast is non-critical */
+  --foreground: #111827;
+  --foreground-secondary: #475569;
+  --foreground-muted: #64748B;
 
-  /* Accent */
-  --accent: #8B7355;
+  --accent: #4338CA;
   --accent-foreground: #FFFFFF;
 
-  /* Borders & rings */
-  --border: #E5E5E5;
-  --ring: rgba(139, 115, 85, 0.3);
+  --border: #E2E8F0;
+  --ring: rgba(67, 56, 202, 0.3);
 
   /* Status */
   --success: #16A34A;
@@ -36,23 +27,19 @@
 }
 
 .dark {
-  /* Surfaces */
-  --background: #0A0A0A;
-  --surface: #171717;
-  --surface-alt: #1E1E1E;
+  --background: #0B1020;
+  --surface: #111827;
+  --surface-alt: #151E30;
 
-  /* Text */
-  --foreground: #F5F5F5;
-  --foreground-secondary: #D1D5DB; /* #D1D5DB on #0A0A0A = 13.5:1 — passes AA */
-  --foreground-muted: #9CA3AF;     /* #9CA3AF on #0A0A0A = 6.9:1 — passes AA */
+  --foreground: #F3F4F6;
+  --foreground-secondary: #CBD5E1;
+  --foreground-muted: #94A3B8;
 
-  /* Accent */
-  --accent: #B8A088;
-  --accent-foreground: #0A0A0A;
+  --accent: #A5B4FC;
+  --accent-foreground: #111827;
 
-  /* Borders & rings */
-  --border: #2A2A2A;
-  --ring: rgba(184, 160, 136, 0.3);
+  --border: #253047;
+  --ring: rgba(165, 180, 252, 0.35);
 
   /* Status */
   --success: #4ADE80;

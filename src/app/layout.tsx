@@ -14,48 +14,41 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sirivennelakammariportfolio.netlify.app"),
-  title: {
-    default: "Siri Vennela Kammari — AI Engineer",
-    template: "%s | Siri Vennela Kammari",
-  },
+  title: "Rishika Vishwakarma | AI/ML Engineer & Python Developer",
   description:
-    "Portfolio of Siri Vennela Kammari, an AI Engineer and Machine Learning enthusiast building intelligent systems through AI, ML, and scalable software solutions.",
+    "Portfolio of Rishika Vishwakarma, an AI/ML and Full-Stack Engineer working with Python, Generative AI, RAG, machine learning, backend development, and modern web technologies.",
   keywords: [
     "AI Engineer",
+    "AI/ML Engineer",
     "Machine Learning",
     "Portfolio",
-    "Siri Vennela Kammari",
+    "Rishika Vishwakarma",
     "Python",
-    "Deep Learning",
-    "NLP",
-    "Hyderabad",
+    "Generative AI",
+    "RAG",
+    "Full-Stack Engineer",
   ],
-  authors: [{ name: "Siri Vennela Kammari" }],
-  creator: "Siri Vennela Kammari",
+  authors: [{ name: "Rishika Vishwakarma" }],
+  creator: "Rishika Vishwakarma",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", type: "image/x-icon" },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://sirivennelakammariportfolio.netlify.app",
-    siteName: "Siri Vennela Kammari",
-    title: "Siri Vennela Kammari — AI Engineer",
+    siteName: "Rishika Vishwakarma",
+    title: "Rishika Vishwakarma | AI/ML Engineer & Python Developer",
     description:
-      "Portfolio of Siri Vennela Kammari, an AI Engineer and Machine Learning enthusiast.",
-    images: [
-      {
-        url: "/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "Siri Vennela Kammari — AI Engineer",
-      },
-    ],
+      "AI/ML and Full-Stack Engineer working with Python, Generative AI, RAG, machine learning, backend development, and modern web technologies.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Siri Vennela Kammari — AI Engineer",
+    title: "Rishika Vishwakarma | AI/ML Engineer & Python Developer",
     description:
-      "Portfolio of Siri Vennela Kammari, an AI Engineer and Machine Learning enthusiast.",
-    images: ["/og-image.svg"],
+      "AI/ML and Full-Stack Engineer working with Python, Generative AI, and modern web technologies.",
   },
   robots: {
     index: true,

@@ -1,104 +1,68 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { GraduationCap } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { STATS } from "@/lib/constants";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
 
 export function About() {
   return (
-    <section id="about" className="py-24">
+    <section id="about" className="py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          title="About Me"
-          subtitle="Passionate about building intelligent systems that make a difference."
+          title="About"
+          subtitle="A computer science graduate focused on useful AI systems and reliable software."
         />
 
-        <div className="grid gap-16 lg:grid-cols-2">
-          {/* Story */}
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
+            transition={{ duration: 0.5 }}
+            className="space-y-5 text-base leading-7 text-fg-secondary"
           >
-            <p className="text-base leading-relaxed text-fg-secondary">
-              I&apos;m a B.Tech Computer Science student specializing in
-              Artificial Intelligence and Machine Learning at{" "}
-              <span className="font-medium text-foreground">
-                VJIT (Vidya Jyothi Institute of Technology)
-              </span>
-              . My journey in technology began with a deep curiosity about how
-              machines can learn and make intelligent decisions.
+            <p>
+              My work spans AI/ML, frontend development, and software
+              development. I have built practical solutions involving RAG
+              pipelines, agentic AI workflows, machine learning, REST APIs, and
+              full-stack applications.
             </p>
-            <p className="text-base leading-relaxed text-fg-secondary">
-              Currently serving as an{" "}
-              <span className="font-medium text-foreground">
-                AI Developer Intern at Viswam.ai
-              </span>
-              , where I work on developing machine learning models, building
-              data preprocessing pipelines, and conducting feature engineering
-              for production systems. I thrive on turning complex data into
-              actionable insights.
-            </p>
-            <p className="text-base leading-relaxed text-fg-secondary">
-              Beyond work, I&apos;m an active participant in national-level
-              hackathons and a continuous learner with certifications spanning
-              Salesforce, Python, and AI development. I believe in the power of
-              open source and collaborative engineering.
-            </p>
-            <p className="text-base leading-relaxed text-fg-secondary">
-              My interests span{" "}
-              <span className="font-medium text-foreground">
-                Artificial Intelligence, Machine Learning, Cloud Computing, and
-                Open Source
-              </span>{" "}
-              development — always exploring the intersection of these fields to
-              build scalable, impactful solutions.
+            <p>
+              I am interested in developing useful AI applications and
+              dependable software, bringing together thoughtful product
+              workflows, maintainable code, and modern engineering tools.
             </p>
           </motion.div>
 
-          {/* Stats */}
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-2 gap-4"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="rounded-2xl border border-border bg-surface p-6 sm:p-7"
           >
-            {STATS.map((stat) => (
-              <motion.div
-                key={stat.label}
-                variants={itemVariants}
-                whileHover={{ y: -4, scale: 1.02 }}
-                className="group rounded-2xl border border-border bg-surface p-6 transition-shadow hover:shadow-lg"
-              >
-                <p className="text-3xl font-light tracking-tight text-foreground">
-                  {stat.value}
+            <div className="flex items-start gap-4">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                <GraduationCap className="h-5 w-5" aria-hidden="true" />
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-accent">
+                  Education
                 </p>
+                <h3 className="mt-2 text-lg font-semibold text-foreground">
+                  Gyan Ganga Institute of Technology and Sciences
+                </h3>
                 <p className="mt-1 text-sm text-fg-secondary">
-                  {stat.suffix ? `${stat.suffix} ` : ""}
-                  {stat.label}
+                  B.Tech in Computer Science and Engineering
                 </p>
-                <div
-                  className="mt-3 h-px w-8 bg-accent transition-all group-hover:w-12"
-                  aria-hidden="true"
-                />
-              </motion.div>
-            ))}
+                <p className="mt-3 text-sm text-fg-muted">
+                  July 2022 – July 2026 · Jabalpur, Madhya Pradesh
+                </p>
+                <p className="mt-4 text-sm font-medium text-foreground">
+                  CGPA: 8.12
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

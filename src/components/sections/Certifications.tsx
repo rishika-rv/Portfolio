@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, ExternalLink } from "lucide-react";
+import { Award } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CERTIFICATIONS } from "@/lib/constants";
 
@@ -24,7 +24,7 @@ export function Certifications() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           title="Certifications"
-          subtitle="Professional certifications validating my expertise and knowledge."
+          subtitle="Selected training in programming and full-stack development."
         />
 
         <motion.div
@@ -32,7 +32,7 @@ export function Certifications() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-5 sm:grid-cols-2"
         >
           {CERTIFICATIONS.map((cert) => (
             <motion.div
@@ -47,23 +47,12 @@ export function Certifications() {
               <h3 className="text-base font-medium text-foreground">
                 {cert.title}
               </h3>
-              <p className="mt-1 text-sm text-accent">{cert.issuer}</p>
-              <p className="mt-1 text-xs text-fg-muted">{cert.date}</p>
+              {cert.issuer && (
+                <p className="mt-1 text-sm text-accent">{cert.issuer}</p>
+              )}
               <p className="mt-3 text-sm leading-relaxed text-fg-secondary">
                 {cert.description}
               </p>
-              {cert.verifyUrl && (
-                <motion.a
-                  href={cert.verifyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ x: 2 }}
-                  className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-accent transition-colors hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                  Verify
-                  <ExternalLink className="h-3 w-3" />
-                </motion.a>
-              )}
             </motion.div>
           ))}
         </motion.div>

@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, ArrowUp } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
-import { PERSONAL_INFO } from "@/lib/constants";
+import { NAV_ITEMS, PERSONAL_INFO } from "@/lib/constants";
+import { EmailActions } from "@/components/ui/EmailActions";
 
 export function Footer() {
   const scrollToTop = () => {
@@ -13,7 +14,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           {/* Left */}
           <div className="text-center md:text-left">
             <p className="text-sm text-fg-secondary">
@@ -27,8 +28,22 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Social links */}
-          <div className="flex items-center gap-4">
+          <nav
+            aria-label="Footer navigation"
+            className="flex flex-wrap justify-center gap-x-4 gap-y-2"
+          >
+            {NAV_ITEMS.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-xs text-fg-secondary transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-3">
             <motion.a
               href={PERSONAL_INFO.github}
               target="_blank"
@@ -51,15 +66,7 @@ export function Footer() {
             >
               <LinkedinIcon className="h-4 w-4" />
             </motion.a>
-            <motion.a
-              href={`mailto:${PERSONAL_INFO.email}`}
-              whileHover={{ scale: 1.1, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-fg-secondary transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              aria-label="Email"
-            >
-              <Mail className="h-4 w-4" />
-            </motion.a>
+            <EmailActions variant="footer" />
           </div>
 
           {/* Back to top */}

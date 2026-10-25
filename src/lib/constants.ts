@@ -1,13 +1,12 @@
 import {
-  Code2,
   Brain,
-  Wrench,
+  Code2,
   Database,
+  Wrench,
   type LucideIcon,
 } from "lucide-react";
 import { config } from "./config";
 
-// ─── Personal Info (sourced from central config) ────────────────────────────
 export const PERSONAL_INFO = {
   name: config.personal.name,
   title: config.personal.title,
@@ -20,18 +19,6 @@ export const PERSONAL_INFO = {
   profileImage: config.personal.profileImage,
 } as const;
 
-// ─── Typing Animation Strings ───────────────────────────────────────────────
-export const TYPING_STRINGS = [...config.typingStrings];
-
-// ─── Statistics ──────────────────────────────────────────────────────────────
-export const STATS = [
-  { label: "Certifications", value: "4+", suffix: "" },
-  { label: "National Hackathons", value: "3+", suffix: "" },
-  { label: "AI Internship", value: "1", suffix: "Experience" },
-  { label: "Programming Languages", value: "4+", suffix: "" },
-] as const;
-
-// ─── Skills ──────────────────────────────────────────────────────────────────
 export interface SkillCategory {
   title: string;
   icon: LucideIcon;
@@ -42,234 +29,214 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: "Programming",
     icon: Code2,
-    skills: ["Python", "Java", "C", "C++"],
+    skills: ["Python", "Java", "JavaScript", "SQL", "HTML5", "CSS3"],
   },
   {
-    title: "AI & ML",
+    title: "AI, ML & Data Science",
     icon: Brain,
     skills: [
       "Machine Learning",
-      "Feature Engineering",
-      "Model Training",
-      "Data Preprocessing",
-      "Model Evaluation",
+      "Deep Learning",
+      "Regression",
+      "Classification",
+      "Time-Series Analysis",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "MLflow",
+      "SHAP",
     ],
   },
   {
-    title: "Tools",
+    title: "Generative AI",
+    icon: Brain,
+    skills: [
+      "Retrieval-Augmented Generation (RAG)",
+      "Agentic AI",
+      "LLM Integration",
+      "Vector Search",
+      "Embeddings",
+      "Prompt Engineering",
+      "NLP",
+    ],
+  },
+  {
+    title: "Frontend",
+    icon: Code2,
+    skills: ["React", "Redux", "Responsive UI Development"],
+  },
+  {
+    title: "Backend",
     icon: Wrench,
-    skills: ["GitHub", "Jupyter Notebook", "Google Colab", "OpenCV"],
+    skills: ["FastAPI", "Node.js", "REST APIs"],
   },
   {
     title: "Databases",
     icon: Database,
-    skills: ["MySQL", "MongoDB"],
+    skills: ["SQLite", "MySQL", "PostgreSQL", "MongoDB"],
+  },
+  {
+    title: "Development & Delivery",
+    icon: Wrench,
+    skills: [
+      "Git",
+      "GitHub",
+      "Docker",
+      "GitHub Actions",
+      "CI/CD",
+      "Cloud Deployment",
+    ],
+  },
+  {
+    title: "Foundations",
+    icon: Code2,
+    skills: [
+      "Data Structures and Algorithms",
+      "OOP",
+      "DBMS",
+      "Computer Networks",
+      "Operating Systems",
+    ],
   },
 ];
 
-// ─── Experience ──────────────────────────────────────────────────────────────
 export interface Experience {
   title: string;
   company: string;
   period: string;
-  description: string;
+  location: string;
   highlights: string[];
 }
 
 export const EXPERIENCES: Experience[] = [
   {
-    title: "AI Developer Intern",
-    company: "Viswam.ai",
-    period: "2024 — Present",
-    description:
-      "Contributing to cutting-edge AI solutions by developing machine learning models and building robust data pipelines.",
+    title: "AI/ML Python Intern",
+    company: "Geak Minds",
+    period: "July 2026 – Present",
+    location: "Chennai, Tamil Nadu (Remote)",
     highlights: [
-      "ML model development and deployment",
-      "Feature engineering for production systems",
-      "Data preprocessing and cleaning pipelines",
-      "Model evaluation and performance tuning",
-      "Cross-functional team collaboration",
+      "Developing Retrieval-Augmented Generation pipelines with Python, LLM integration, embeddings, and vector search.",
+      "Building agentic AI workflows for multi-step task execution with human-in-the-loop review.",
+      "Working on machine learning development, evaluation, and deployment using Databricks.",
+      "Applying regression, classification, and time-series techniques; using MLflow for experiment tracking and SHAP for interpretability.",
+    ],
+  },
+  {
+    title: "Frontend Developer Intern",
+    company: "AKSSAI ProjExel India",
+    period: "September 2025 – March 2026",
+    location: "Jabalpur, Madhya Pradesh",
+    highlights: [
+      "Developed React interfaces for enterprise applications and integrated REST APIs for dynamic features and dashboards.",
+      "Improved component reuse and state management while implementing responsive UI and API error handling.",
+      "Participated in debugging, testing, code reviews, and Agile development.",
+    ],
+  },
+  {
+    title: "Software Developer Intern",
+    company: "Elevare Technology",
+    period: "June 2025 – August 2025",
+    location: "Remote",
+    highlights: [
+      "Developed responsive web modules using HTML, CSS, and JavaScript.",
+      "Integrated backend APIs and implemented search and filtering features.",
+      "Contributed to testing, code reviews, Git-based collaboration, and software delivery activities.",
     ],
   },
 ];
 
-// ─── Projects ────────────────────────────────────────────────────────────────
 export interface Project {
   id: string;
   title: string;
   description: string;
-  longDescription: string;
-  image: string;
+  problem: string;
+  details?: string;
   technologies: string[];
   category: string;
   githubUrl: string;
-  liveUrl?: string;
+  liveUrl: string;
   featured: boolean;
 }
 
 export const PROJECTS: Project[] = [
   {
-    id: "ml-sentiment",
-    title: "Sentiment Analysis Engine",
+    id: "baymax",
+    title: "BAYMAX — AI-Assisted Mental Wellness Platform",
     description:
-      "End-to-end ML pipeline for real-time sentiment analysis on social media data using NLP techniques.",
-    longDescription:
-      "Built a comprehensive sentiment analysis system that processes social media feeds in real-time. The pipeline includes data ingestion, preprocessing, feature extraction using TF-IDF and word embeddings, model training with ensemble methods, and a REST API for inference. Achieved 92% accuracy on benchmark datasets.",
-    image: "/projects/sentiment.svg",
-    technologies: ["Python", "Scikit-learn", "NLTK", "Flask", "Pandas"],
-    category: "ML",
-    githubUrl: "https://github.com/sirivennela/sentiment-analysis",
-    featured: true,
-  },
-  {
-    id: "ai-chatbot",
-    title: "Intelligent Chatbot",
-    description:
-      "Context-aware conversational AI built with transformer architectures and fine-tuned on domain-specific data.",
-    longDescription:
-      "Developed an intelligent chatbot system leveraging transformer-based architectures. The model was fine-tuned on domain-specific conversation data to provide contextually relevant responses. Includes a web interface, conversation memory, and sentiment-aware response generation.",
-    image: "/projects/chatbot.svg",
-    technologies: ["Python", "TensorFlow", "Transformers", "FastAPI", "React"],
+      "A full-stack mental wellness platform combining LLM-based conversational assistance with retrieval-augmented contextual responses.",
+    problem:
+      "Explores how conversational AI can provide more contextual, personalized wellness interactions.",
+    details:
+      "Built around a FastAPI backend and PostgreSQL data layer, with conversational functionality, user activity and wellness analytics, and NLP-driven personalization. This is an AI-assisted wellness application, not a clinically validated diagnostic or treatment tool.",
+    technologies: ["Python", "FastAPI", "PostgreSQL", "LLMs", "RAG", "NLP"],
     category: "AI",
-    githubUrl: "https://github.com/sirivennela/ai-chatbot",
+    githubUrl: config.projectLinks.baymax.github,
+    liveUrl: config.projectLinks.baymax.live,
     featured: true,
   },
   {
-    id: "image-classifier",
-    title: "Image Classification System",
+    id: "complaint-management",
+    title: "Smart Complaint & Issue Management System",
     description:
-      "Deep learning image classifier with transfer learning, achieving high accuracy on custom datasets.",
-    longDescription:
-      "Built a robust image classification system using convolutional neural networks with transfer learning. Leveraged pre-trained ResNet and VGG architectures, fine-tuned on custom datasets. Includes data augmentation pipeline, model comparison framework, and a Streamlit-based demo interface.",
-    image: "/projects/classifier.svg",
-    technologies: ["Python", "PyTorch", "OpenCV", "Streamlit", "NumPy"],
-    category: "AI",
-    githubUrl: "https://github.com/sirivennela/image-classifier",
+      "A full-stack complaint management application for structured issue tracking and role-based workflows.",
+    problem:
+      "Organizes complaint intake, status tracking, and reporting within a single workflow.",
+    details:
+      "Connects a React frontend to Node.js REST APIs and a PostgreSQL data layer, supporting complaint status updates and lifecycle management.",
+    technologies: ["React", "Node.js", "PostgreSQL", "REST APIs"],
+    category: "Full-stack",
+    githubUrl: config.projectLinks.complaints.github,
+    liveUrl: config.projectLinks.complaints.live,
     featured: true,
   },
   {
-    id: "data-dashboard",
-    title: "Analytics Dashboard",
+    id: "mcp-tool-execution",
+    title: "MCP Server and LLM Tool Execution",
     description:
-      "Interactive data visualization dashboard for ML model monitoring and performance tracking.",
-    longDescription:
-      "Created an interactive analytics dashboard for monitoring ML model performance in production. Features real-time metrics visualization, model drift detection, A/B test result analysis, and automated alerting. Built with modern web technologies for a seamless user experience.",
-    image: "/projects/dashboard.svg",
-    technologies: ["Python", "Plotly", "Dash", "Pandas", "MongoDB"],
-    category: "Python",
-    githubUrl: "https://github.com/sirivennela/analytics-dashboard",
-    liveUrl: "https://analytics-demo.vercel.app",
-    featured: false,
+      "A Python MCP server and interactive client demonstrating tool discovery, resource access, prompt retrieval, and LLM-directed tool execution.",
+    problem:
+      "Demonstrates a structured way for an LLM-powered client to discover and invoke external tools.",
+    details:
+      "Combines MCP with Groq, SQLite, and SQLAlchemy to explore tool execution and resource access in an interactive workflow.",
+    technologies: ["Python", "MCP", "Groq", "SQLite", "SQLAlchemy"],
+    category: "Developer Tools",
+    githubUrl: config.projectLinks.mcp.github,
+    liveUrl: config.projectLinks.mcp.live,
+    featured: true,
   },
   {
-    id: "portfolio-site",
-    title: "Portfolio Website",
+    id: "docker-python-cicd",
+    title: "Dockerized Python Application with CI/CD",
     description:
-      "A premium, performance-optimized personal portfolio built with Next.js and Framer Motion.",
-    longDescription:
-      "Designed and developed a world-class personal portfolio website featuring smooth animations, dark/light mode, command palette, and a minimalist luxury aesthetic. Built with Next.js 15, TypeScript, Tailwind CSS, and Framer Motion for a premium user experience.",
-    image: "/projects/portfolio.svg",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    category: "Web",
-    githubUrl: "https://github.com/sirivennela/portfolio",
-    liveUrl: "https://sirivennelakammariportfolio.netlify.app",
+      "A containerized Python application with an automated CI/CD workflow and deployment verification.",
+    problem:
+      "Packages a Python application for repeatable delivery through an automated workflow.",
+    technologies: ["Docker", "Python", "GitHub Actions", "Docker Hub", "Render"],
+    category: "Deployment",
+    githubUrl: config.projectLinks.cicd.github,
+    liveUrl: config.projectLinks.cicd.live,
     featured: false,
   },
 ];
 
-// ─── Hackathons ──────────────────────────────────────────────────────────────
-export interface Hackathon {
-  title: string;
-  date: string;
-  location: string;
-  description: string;
-  highlights: string[];
-  result?: string;
-}
-
-export const HACKATHONS: Hackathon[] = [
-  {
-    title: "Agentic Ethereum Hackathon India",
-    date: "2024",
-    location: "India",
-    description:
-      "Competed in the Agentic Ethereum Hackathon, building decentralized AI solutions on the Ethereum blockchain.",
-    highlights: [
-      "Developed smart contract integrations with AI agents",
-      "Built decentralized inference pipeline",
-      "Collaborated with cross-functional teams",
-    ],
-    result: "Participant",
-  },
-  {
-    title: "IndiaAI Impact Gen-AI Hackathon",
-    date: "2024",
-    location: "India",
-    description:
-      "Participated in the IndiaAI Impact Gen-AI Hackathon, focusing on generative AI solutions for real-world problems.",
-    highlights: [
-      "Built generative AI prototype for social impact",
-      "Implemented prompt engineering strategies",
-      "Presented solution to industry judges",
-    ],
-    result: "Participant",
-  },
-  {
-    title: "HackWithHyderabad",
-    date: "2024",
-    location: "Hyderabad, India",
-    description:
-      "Competed in HackWithHyderabad, developing innovative solutions under time pressure with a focus on AI and ML.",
-    highlights: [
-      "Rapid prototyping under 48-hour deadline",
-      "Full-stack development with AI integration",
-      "Pitched solution to panel of tech leaders",
-    ],
-    result: "Participant",
-  },
-];
-
-// ─── Certifications ──────────────────────────────────────────────────────────
 export interface Certification {
   title: string;
-  issuer: string;
-  date: string;
+  issuer?: string;
   description: string;
-  verifyUrl?: string;
 }
 
 export const CERTIFICATIONS: Certification[] = [
   {
-    title: "Salesforce Administrator",
-    issuer: "Salesforce",
-    date: "2024",
-    description:
-      "Certified Salesforce Administrator with expertise in configuring and managing Salesforce environments.",
+    title: "Java and Data Structures & Algorithms",
+    description: "Certification in Java programming and data structures and algorithms.",
   },
   {
-    title: "Python Essentials 2",
-    issuer: "Cisco Networking Academy",
-    date: "2024",
-    description:
-      "Advanced Python programming certification covering OOP, file handling, and modules.",
-  },
-  {
-    title: "Operating Systems Lab",
-    issuer: "NPTEL / IIT",
-    date: "2024",
-    description:
-      "Certification in Operating Systems concepts including process management, memory, and file systems.",
-  },
-  {
-    title: "AI Summer Internship",
-    issuer: "Viswam.ai",
-    date: "2024",
-    description:
-      "Certified completion of AI development internship with hands-on ML model building and deployment.",
+    title: "Full Stack Web Development",
+    issuer: "Apna College",
+    description: "Full-stack web development coursework.",
   },
 ];
 
-// ─── Achievements ────────────────────────────────────────────────────────────
 export interface Achievement {
   title: string;
   description: string;
@@ -278,32 +245,12 @@ export interface Achievement {
 
 export const ACHIEVEMENTS: Achievement[] = [
   {
-    title: "3x National Hackathon Participant",
-    description:
-      "Competed in three national-level hackathons including Agentic Ethereum, IndiaAI Impact Gen-AI, and HackWithHyderabad.",
-    icon: "trophy",
-  },
-  {
-    title: "AI Developer Intern at Viswam.ai",
-    description:
-      "Selected for a competitive AI development internship, working on production ML systems.",
-    icon: "briefcase",
-  },
-  {
-    title: "4+ Professional Certifications",
-    description:
-      "Earned certifications spanning Salesforce, Python, Operating Systems, and AI development.",
+    title: "150+ DSA problems solved",
+    description: "Problem-solving practice on LeetCode and HackerRank.",
     icon: "award",
-  },
-  {
-    title: "B.Tech CSE (AI & ML) at VJIT",
-    description:
-      "Pursuing specialized Computer Science degree with focus on Artificial Intelligence and Machine Learning.",
-    icon: "graduation",
   },
 ];
 
-// ─── Navigation ──────────────────────────────────────────────────────────────
 export interface NavItem {
   label: string;
   href: string;
@@ -314,11 +261,11 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  { label: "Hackathons", href: "#hackathons" },
+  { label: "Certifications", href: "#certifications" },
+  { label: "Problem Solving", href: "#achievements" },
   { label: "Contact", href: "#contact" },
 ];
 
-// ─── Command Palette ────────────────────────────────────────────────────────
 export interface Command {
   label: string;
   shortcut?: string;
@@ -330,12 +277,48 @@ export const COMMANDS: Command[] = [
   { label: "Home", shortcut: "H", action: "#hero", section: "Navigation" },
   { label: "About", shortcut: "A", action: "#about", section: "Navigation" },
   { label: "Skills", shortcut: "S", action: "#skills", section: "Navigation" },
-  { label: "Experience", shortcut: "E", action: "#experience", section: "Navigation" },
-  { label: "Projects", shortcut: "P", action: "#projects", section: "Navigation" },
-  { label: "Certifications", shortcut: "C", action: "#certifications", section: "Navigation" },
-  { label: "Contact", shortcut: "K", action: "#contact", section: "Navigation" },
-  { label: "Download Resume", shortcut: "R", action: "resume", section: "Actions" },
+  {
+    label: "Experience",
+    shortcut: "E",
+    action: "#experience",
+    section: "Navigation",
+  },
+  {
+    label: "Projects",
+    shortcut: "P",
+    action: "#projects",
+    section: "Navigation",
+  },
+  {
+    label: "Certifications",
+    shortcut: "C",
+    action: "#certifications",
+    section: "Navigation",
+  },
+  {
+    label: "Problem Solving",
+    shortcut: "D",
+    action: "#achievements",
+    section: "Navigation",
+  },
+  {
+    label: "Contact",
+    shortcut: "K",
+    action: "#contact",
+    section: "Navigation",
+  },
+  {
+    label: "Download Resume",
+    shortcut: "R",
+    action: "resume",
+    section: "Actions",
+  },
   { label: "Toggle Theme", shortcut: "T", action: "theme", section: "Actions" },
   { label: "Go to GitHub", shortcut: "G", action: "github", section: "Links" },
-  { label: "Go to LinkedIn", shortcut: "L", action: "linkedin", section: "Links" },
+  {
+    label: "Go to LinkedIn",
+    shortcut: "L",
+    action: "linkedin",
+    section: "Links",
+  },
 ];

@@ -1,35 +1,25 @@
-// ═══════════════════════════════════════════════════════════════════════════════
-// CENTRAL CONFIGURATION — Edit all links and personal info here
-// ═══════════════════════════════════════════════════════════════════════════════
-
 export const config = {
   personal: {
-    name: "Siri Vennela Kammari",
-    title: "AI Engineer | Machine Learning Enthusiast",
+    name: "Rishika Vishwakarma",
+    title: "AI/ML Engineer & Python Developer",
     tagline:
-      "Building intelligent systems through AI, Machine Learning, and scalable software solutions.",
-    email: "sirivennela.635@gmail.com",
-    location: "Hyderabad, Telangana, India",
-    resumePath: "/resume/Siri_Vennela_Kammari_Resume.pdf",
-    profileImage: "/images/profile.jpg",
+      "I build AI-powered applications, intelligent workflows, and reliable backend systems using Python, Generative AI, and modern software engineering.",
+    email: "rishikavishwakarma04@gmail.com",
+    location: "Jabalpur, Madhya Pradesh, India",
+    resumePath: "/resume/RishikaVishwakarma.pdf",
+    profileImage: "/images/rishika-formal.jpeg",
   },
 
   socials: {
-    github: "https://github.com/Ksiri03",
-    linkedin: "https://www.linkedin.com/in/siri-vennela-9375a42b8/",
+    github: "https://github.com/rishika-rv",
+    linkedin: "https://www.linkedin.com/in/rishika-vishwakarma-6b2aa92b6/",
   },
 
-  // Formspree endpoint for contact form
-  // Sign up at https://formspree.io and create a form to get your endpoint
-  formspree: {
-    endpoint: "https://formspree.io/f/xlgvqode",
+  // Replace these placeholders with verified repository or demo URLs.
+  projectLinks: {
+    baymax: { github: "TODO_ADD_GITHUB_URL", live: "" },
+    complaints: { github: "TODO_ADD_GITHUB_URL", live: "" },
+    mcp: { github: "TODO_ADD_GITHUB_URL", live: "" },
+    cicd: { github: "TODO_ADD_GITHUB_URL", live: "" },
   },
-
-  // Typing animation strings
-  typingStrings: [
-    "AI Engineer",
-    "ML Developer",
-    "Problem Solver",
-    "Hackathon Participant",
-  ],
 } as const;

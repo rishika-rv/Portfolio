@@ -36,7 +36,7 @@ export function Skills() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           title="Skills & Technologies"
-          subtitle="The tools and technologies I use to bring ideas to life."
+          subtitle="A practical toolkit across AI, software development, and delivery."
         />
 
         {/* Skill search */}
@@ -75,7 +75,7 @@ export function Skills() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
         >
           {filteredCategories.map((category) => {
             const Icon = category.icon;

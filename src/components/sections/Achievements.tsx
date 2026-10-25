@@ -30,8 +30,8 @@ export function Achievements() {
     <section id="achievements" className="py-24">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          title="Achievements"
-          subtitle="Milestones and recognitions along my journey."
+          title="Problem Solving"
+          subtitle="Consistent practice with data structures and algorithms."
         />
 
         <motion.div

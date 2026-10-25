@@ -1,9 +1,3 @@
 # Images
 
-Place your profile image here:
-
-```
-public/images/profile.jpg
-```
-
-The file name must match the `profileImage` in `src/lib/config.ts`.
+The hero profile image is `public/images/rishika-formal.jpeg`, configured in `src/lib/config.ts`.
